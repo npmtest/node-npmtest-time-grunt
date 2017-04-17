@@ -1,5 +1,7 @@
-<html lang="en"><head>
-    <title>Code coverage report for node-npmtest-time-grunt/time-grunt/index.js</title>
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for node-npmtest-time-grunt/node_modules/time-grunt/index.js</title>
     <meta charset="utf-8">
     <style>
         body, html {
@@ -192,7 +194,7 @@
     <h1 style="font-weight: bold;">
         <a href="https://github.com/npmtest/node-npmtest-time-grunt">npmtest-time-grunt (v0.0.1)</a>
     </h1>
-    <h1>Code coverage report for <span class="entity">node-npmtest-time-grunt/time-grunt/index.js</span></h1>
+    <h1>Code coverage report for <span class="entity">node-npmtest-time-grunt/node_modules/time-grunt/index.js</span></h1>
     <h2>
         
         Statements: <span class="metric">14.89% <small>(14 / 94)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
@@ -208,11 +210,11 @@
         
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
-    <div class="path"><a href="../../index.html">All files</a> » <a href="index.html">node-npmtest-time-grunt/time-grunt/</a> » index.js</div>
+    <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">node-npmtest-time-grunt/node_modules/time-grunt/</a> &#187; index.js</div>
 </div>
 <div class="body">
 <pre><table class="coverage">
-<tbody><tr><td class="line-count">1
+<tr><td class="line-count">1
 2
 3
 4
@@ -580,178 +582,177 @@ var barChar = require('figures').square;
 var argv = process.argv.slice(2);
 var write = process.stdout.write.bind(process.stdout);
 &nbsp;
-<span class="fstat-no" title="function not covered">function log(str) {</span>
-<span class="cstat-no" title="statement not covered">	write(str + '\n', 'utf8');</span>
+<span class="fstat-no" title="function not covered" >function log(str) {</span>
+<span class="cstat-no" title="statement not covered" >	write(str + '\n', 'utf8');</span>
 }
 &nbsp;
-module.exports = <span class="fstat-no" title="function not covered">function (grunt, cb) {</span>
-<span class="cstat-no" title="statement not covered">	var now = new Date();</span>
-<span class="cstat-no" title="statement not covered">	var startTimePretty = dateTime(new Date(), {local: true});</span>
-<span class="cstat-no" title="statement not covered">	var startTime = now.getTime();</span>
-<span class="cstat-no" title="statement not covered">	var prevTime = startTime;</span>
-<span class="cstat-no" title="statement not covered">	var prevTaskName = 'loading tasks';</span>
-<span class="cstat-no" title="statement not covered">	var tableData = [];</span>
+module.exports = <span class="fstat-no" title="function not covered" >function (grunt, cb) {</span>
+<span class="cstat-no" title="statement not covered" >	var now = new Date();</span>
+<span class="cstat-no" title="statement not covered" >	var startTimePretty = dateTime(new Date(), {local: true});</span>
+<span class="cstat-no" title="statement not covered" >	var startTime = now.getTime();</span>
+<span class="cstat-no" title="statement not covered" >	var prevTime = startTime;</span>
+<span class="cstat-no" title="statement not covered" >	var prevTaskName = 'loading tasks';</span>
+<span class="cstat-no" title="statement not covered" >	var tableData = [];</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">	if (argv.indexOf('--help') !== -1 ||</span>
+<span class="cstat-no" title="statement not covered" >	if (argv.indexOf('--help') !== -1 ||</span>
 		argv.indexOf('-h') !== -1 ||
 		// for `quiet-grunt`
 		argv.indexOf('--quiet') !== -1 ||
 		argv.indexOf('-q') !== -1 ||
 		argv.indexOf('--version') !== -1 ||
 		argv.indexOf('-V') !== -1) {
-<span class="cstat-no" title="statement not covered">		return;</span>
+<span class="cstat-no" title="statement not covered" >		return;</span>
 	}
 &nbsp;
 	// crazy hack to work around stupid node-exit
 	// Can this be removed now that node-exit#4 has been resolved?
 	// https://github.com/cowboy/node-exit/issues/4
-<span class="cstat-no" title="statement not covered">	var originalExit = process.exit;</span>
+<span class="cstat-no" title="statement not covered" >	var originalExit = process.exit;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">	var interval;</span>
+<span class="cstat-no" title="statement not covered" >	var interval;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">	var exit = <span class="fstat-no" title="function not covered">function (exitCode) {</span></span>
-<span class="cstat-no" title="statement not covered">		clearInterval(interval);</span>
-<span class="cstat-no" title="statement not covered">		process.emit('timegruntexit', exitCode);</span>
-<span class="cstat-no" title="statement not covered">		exit = <span class="fstat-no" title="function not covered">function () {</span>};</span>
+<span class="cstat-no" title="statement not covered" >	var exit = <span class="fstat-no" title="function not covered" >function (exitCode) {</span></span>
+<span class="cstat-no" title="statement not covered" >		clearInterval(interval);</span>
+<span class="cstat-no" title="statement not covered" >		process.emit('timegruntexit', exitCode);</span>
+<span class="cstat-no" title="statement not covered" >		exit = <span class="fstat-no" title="function not covered" >function () {</span>};</span>
 	};
 &nbsp;
-<span class="cstat-no" title="statement not covered">	interval = setInterval(<span class="fstat-no" title="function not covered">function () {</span></span>
-<span class="cstat-no" title="statement not covered">		process.exit = exit;</span>
+<span class="cstat-no" title="statement not covered" >	interval = setInterval(<span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >		process.exit = exit;</span>
 	}, 100);
 &nbsp;
-<span class="cstat-no" title="statement not covered">	process.exit = exit;</span>
+<span class="cstat-no" title="statement not covered" >	process.exit = exit;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">	hooker.hook(grunt.log, 'header', <span class="fstat-no" title="function not covered">function () {</span></span>
-<span class="cstat-no" title="statement not covered">		var name = grunt.task.current.nameArgs;</span>
-<span class="cstat-no" title="statement not covered">		var diff = Date.now() - prevTime;</span>
+<span class="cstat-no" title="statement not covered" >	hooker.hook(grunt.log, 'header', <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >		var name = grunt.task.current.nameArgs;</span>
+<span class="cstat-no" title="statement not covered" >		var diff = Date.now() - prevTime;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">		if (prevTaskName &amp;&amp; prevTaskName !== name) {</span>
-<span class="cstat-no" title="statement not covered">			tableData.push([prevTaskName, diff]);</span>
+<span class="cstat-no" title="statement not covered" >		if (prevTaskName &amp;&amp; prevTaskName !== name) {</span>
+<span class="cstat-no" title="statement not covered" >			tableData.push([prevTaskName, diff]);</span>
 		}
 &nbsp;
-<span class="cstat-no" title="statement not covered">		prevTime = Date.now();</span>
-<span class="cstat-no" title="statement not covered">		prevTaskName = name;</span>
+<span class="cstat-no" title="statement not covered" >		prevTime = Date.now();</span>
+<span class="cstat-no" title="statement not covered" >		prevTaskName = name;</span>
 	});
 &nbsp;
-<span class="fstat-no" title="function not covered">	function formatTable(tableData) {</span>
-<span class="cstat-no" title="statement not covered">		var totalTime = Date.now() - startTime;</span>
-<span class="cstat-no" title="statement not covered">		var longestTaskName = tableData.reduce(<span class="fstat-no" title="function not covered">function (acc, row) {</span></span>
-<span class="cstat-no" title="statement not covered">			var avg = row[1] / totalTime;</span>
+<span class="fstat-no" title="function not covered" >	function formatTable(tableData) {</span>
+<span class="cstat-no" title="statement not covered" >		var totalTime = Date.now() - startTime;</span>
+<span class="cstat-no" title="statement not covered" >		var longestTaskName = tableData.reduce(<span class="fstat-no" title="function not covered" >function (acc, row) {</span></span>
+<span class="cstat-no" title="statement not covered" >			var avg = row[1] / totalTime;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">			if (avg &lt; 0.01 &amp;&amp; !grunt.option('verbose')) {</span>
-<span class="cstat-no" title="statement not covered">				return acc;</span>
+<span class="cstat-no" title="statement not covered" >			if (avg &lt; 0.01 &amp;&amp; !grunt.option('verbose')) {</span>
+<span class="cstat-no" title="statement not covered" >				return acc;</span>
 			}
 &nbsp;
-<span class="cstat-no" title="statement not covered">			return Math.max(acc, row[0].length);</span>
+<span class="cstat-no" title="statement not covered" >			return Math.max(acc, row[0].length);</span>
 		}, 0);
 &nbsp;
-<span class="cstat-no" title="statement not covered">		var maxColumns = process.stdout.columns || 80;</span>
-<span class="cstat-no" title="statement not covered">		var maxBarWidth;</span>
+<span class="cstat-no" title="statement not covered" >		var maxColumns = process.stdout.columns || 80;</span>
+<span class="cstat-no" title="statement not covered" >		var maxBarWidth;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">		if (longestTaskName &gt; maxColumns / 2) {</span>
-<span class="cstat-no" title="statement not covered">			maxBarWidth = (maxColumns - 20) / 2;</span>
+<span class="cstat-no" title="statement not covered" >		if (longestTaskName &gt; maxColumns / 2) {</span>
+<span class="cstat-no" title="statement not covered" >			maxBarWidth = (maxColumns - 20) / 2;</span>
 		} else {
-<span class="cstat-no" title="statement not covered">			maxBarWidth = maxColumns - (longestTaskName + 20);</span>
+<span class="cstat-no" title="statement not covered" >			maxBarWidth = maxColumns - (longestTaskName + 20);</span>
 		}
-<span class="cstat-no" title="statement not covered">		maxBarWidth = Math.max(0, maxBarWidth);</span>
+<span class="cstat-no" title="statement not covered" >		maxBarWidth = Math.max(0, maxBarWidth);</span>
 &nbsp;
-<span class="fstat-no" title="function not covered">		function shorten(taskName) {</span>
-<span class="cstat-no" title="statement not covered">			var nameLength = taskName.length;</span>
+<span class="fstat-no" title="function not covered" >		function shorten(taskName) {</span>
+<span class="cstat-no" title="statement not covered" >			var nameLength = taskName.length;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">			if (nameLength &lt;= maxBarWidth) {</span>
-<span class="cstat-no" title="statement not covered">				return taskName;</span>
+<span class="cstat-no" title="statement not covered" >			if (nameLength &lt;= maxBarWidth) {</span>
+<span class="cstat-no" title="statement not covered" >				return taskName;</span>
 			}
 &nbsp;
-<span class="cstat-no" title="statement not covered">			var partLength = Math.floor((maxBarWidth - 3) / 2);</span>
-<span class="cstat-no" title="statement not covered">			var start = taskName.substr(0, partLength + 1);</span>
-<span class="cstat-no" title="statement not covered">			var end = taskName.substr(nameLength - partLength);</span>
+<span class="cstat-no" title="statement not covered" >			var partLength = Math.floor((maxBarWidth - 3) / 2);</span>
+<span class="cstat-no" title="statement not covered" >			var start = taskName.substr(0, partLength + 1);</span>
+<span class="cstat-no" title="statement not covered" >			var end = taskName.substr(nameLength - partLength);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">			return start.trim() + '...' + end.trim();</span>
+<span class="cstat-no" title="statement not covered" >			return start.trim() + '...' + end.trim();</span>
 		}
 &nbsp;
-<span class="fstat-no" title="function not covered">		function createBar(percentage) {</span>
-<span class="cstat-no" title="statement not covered">			var rounded = Math.round(percentage * 100);</span>
+<span class="fstat-no" title="function not covered" >		function createBar(percentage) {</span>
+<span class="cstat-no" title="statement not covered" >			var rounded = Math.round(percentage * 100);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">			if (rounded === 0) {</span>
-<span class="cstat-no" title="statement not covered">				return '0%';</span>
+<span class="cstat-no" title="statement not covered" >			if (rounded === 0) {</span>
+<span class="cstat-no" title="statement not covered" >				return '0%';</span>
 			}
 &nbsp;
-<span class="cstat-no" title="statement not covered">			var barLength = Math.ceil(maxBarWidth * percentage) + 1;</span>
-<span class="cstat-no" title="statement not covered">			var bar = new Array(barLength).join(barChar);</span>
+<span class="cstat-no" title="statement not covered" >			var barLength = Math.ceil(maxBarWidth * percentage) + 1;</span>
+<span class="cstat-no" title="statement not covered" >			var bar = new Array(barLength).join(barChar);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">			return bar + ' ' + rounded + '%';</span>
+<span class="cstat-no" title="statement not covered" >			return bar + ' ' + rounded + '%';</span>
 		}
 &nbsp;
-<span class="cstat-no" title="statement not covered">		var tableDataProcessed = tableData.map(<span class="fstat-no" title="function not covered">function (row) {</span></span>
-<span class="cstat-no" title="statement not covered">			var avg = row[1] / totalTime;</span>
+<span class="cstat-no" title="statement not covered" >		var tableDataProcessed = tableData.map(<span class="fstat-no" title="function not covered" >function (row) {</span></span>
+<span class="cstat-no" title="statement not covered" >			var avg = row[1] / totalTime;</span>
 &nbsp;
 			// hide the watch task
-<span class="cstat-no" title="statement not covered">			if (!grunt.option('verbose') &amp;&amp; /^watch($|:)/.test(row[0])) {</span>
-<span class="cstat-no" title="statement not covered">				return null;</span>
+<span class="cstat-no" title="statement not covered" >			if (!grunt.option('verbose') &amp;&amp; /^watch($|:)/.test(row[0])) {</span>
+<span class="cstat-no" title="statement not covered" >				return null;</span>
 			}
 &nbsp;
-<span class="cstat-no" title="statement not covered">			if (numberIsNan(avg) || (avg &lt; 0.01 &amp;&amp; !grunt.option('verbose'))) {</span>
-<span class="cstat-no" title="statement not covered">				return null;</span>
+<span class="cstat-no" title="statement not covered" >			if (numberIsNan(avg) || (avg &lt; 0.01 &amp;&amp; !grunt.option('verbose'))) {</span>
+<span class="cstat-no" title="statement not covered" >				return null;</span>
 			}
 &nbsp;
-<span class="cstat-no" title="statement not covered">			return [shorten(row[0]), chalk.blue(prettyMs(row[1])), chalk.blue(createBar(avg))];</span>
-		}).reduce(<span class="fstat-no" title="function not covered">function (acc, row) {</span>
-<span class="cstat-no" title="statement not covered">			if (row) {</span>
-<span class="cstat-no" title="statement not covered">				acc.push(row);</span>
-<span class="cstat-no" title="statement not covered">				return acc;</span>
+<span class="cstat-no" title="statement not covered" >			return [shorten(row[0]), chalk.blue(prettyMs(row[1])), chalk.blue(createBar(avg))];</span>
+		}).reduce(<span class="fstat-no" title="function not covered" >function (acc, row) {</span>
+<span class="cstat-no" title="statement not covered" >			if (row) {</span>
+<span class="cstat-no" title="statement not covered" >				acc.push(row);</span>
+<span class="cstat-no" title="statement not covered" >				return acc;</span>
 			}
 &nbsp;
-<span class="cstat-no" title="statement not covered">			return acc;</span>
+<span class="cstat-no" title="statement not covered" >			return acc;</span>
 		}, []);
 &nbsp;
-<span class="cstat-no" title="statement not covered">		tableDataProcessed.push([chalk.magenta('Total', prettyMs(totalTime))]);</span>
+<span class="cstat-no" title="statement not covered" >		tableDataProcessed.push([chalk.magenta('Total', prettyMs(totalTime))]);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">		return table(tableDataProcessed, {</span>
+<span class="cstat-no" title="statement not covered" >		return table(tableDataProcessed, {</span>
 			align: ['l', 'r', 'l'],
-			stringLength: <span class="fstat-no" title="function not covered">function (str) {</span>
-<span class="cstat-no" title="statement not covered">				return chalk.stripColor(str).length;</span>
+			stringLength: <span class="fstat-no" title="function not covered" >function (str) {</span>
+<span class="cstat-no" title="statement not covered" >				return chalk.stripColor(str).length;</span>
 			}
 		});
 	}
 &nbsp;
-<span class="cstat-no" title="statement not covered">	process.on('SIGINT', <span class="fstat-no" title="function not covered">function () {</span></span>
-<span class="cstat-no" title="statement not covered">		process.exit();</span>
+<span class="cstat-no" title="statement not covered" >	process.on('SIGINT', <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >		process.exit();</span>
 	});
 &nbsp;
-<span class="cstat-no" title="statement not covered">	process.once('timegruntexit', <span class="fstat-no" title="function not covered">function (exitCode) {</span></span>
-<span class="cstat-no" title="statement not covered">		clearInterval(interval);</span>
+<span class="cstat-no" title="statement not covered" >	process.once('timegruntexit', <span class="fstat-no" title="function not covered" >function (exitCode) {</span></span>
+<span class="cstat-no" title="statement not covered" >		clearInterval(interval);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">		process.exit = originalExit;</span>
-<span class="cstat-no" title="statement not covered">		hooker.unhook(grunt.log, 'header');</span>
+<span class="cstat-no" title="statement not covered" >		process.exit = originalExit;</span>
+<span class="cstat-no" title="statement not covered" >		hooker.unhook(grunt.log, 'header');</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">		var diff = Date.now() - prevTime;</span>
+<span class="cstat-no" title="statement not covered" >		var diff = Date.now() - prevTime;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">		if (prevTaskName) {</span>
-<span class="cstat-no" title="statement not covered">			tableData.push([prevTaskName, diff]);</span>
+<span class="cstat-no" title="statement not covered" >		if (prevTaskName) {</span>
+<span class="cstat-no" title="statement not covered" >			tableData.push([prevTaskName, diff]);</span>
 		}
 &nbsp;
 		// `grunt.log.header` should be unhooked above, but in some cases it's not
-<span class="cstat-no" title="statement not covered">		log('\n\n' + chalk.underline('Execution Time') + chalk.gray(' (' + startTimePretty + ')'));</span>
-<span class="cstat-no" title="statement not covered">		log(formatTable(tableData) + '\n');</span>
+<span class="cstat-no" title="statement not covered" >		log('\n\n' + chalk.underline('Execution Time') + chalk.gray(' (' + startTimePretty + ')'));</span>
+<span class="cstat-no" title="statement not covered" >		log(formatTable(tableData) + '\n');</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">		if (cb) {</span>
-<span class="cstat-no" title="statement not covered">			cb(tableData, <span class="fstat-no" title="function not covered">function () {</span></span>
-<span class="cstat-no" title="statement not covered">				process.exit(exitCode);</span>
+<span class="cstat-no" title="statement not covered" >		if (cb) {</span>
+<span class="cstat-no" title="statement not covered" >			cb(tableData, <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >				process.exit(exitCode);</span>
 			});
 &nbsp;
-<span class="cstat-no" title="statement not covered">			return;</span>
+<span class="cstat-no" title="statement not covered" >			return;</span>
 		}
 &nbsp;
-<span class="cstat-no" title="statement not covered">		process.exit(exitCode);</span>
+<span class="cstat-no" title="statement not covered" >		process.exit(exitCode);</span>
 	});
 };
 &nbsp;
 &nbsp;</pre></td></tr>
-</tbody></table></pre>
+</table></pre>
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Tue Apr 11 2017 12:16:31 GMT+0000 (UTC)</div>
+    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Mon Apr 17 2017 11:22:59 GMT+0000 (UTC)</div>
 </div>
-
-
-</body></html>
+</body>
+</html>
