@@ -1,4 +1,7 @@
-# test coverage for  [time-grunt (v1.4.0)](https://github.com/sindresorhus/time-grunt#readme)  [![npm package](https://img.shields.io/npm/v/npmtest-time-grunt.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-time-grunt) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-time-grunt.svg)](https://travis-ci.org/npmtest/node-npmtest-time-grunt)
+# npmtest-time-grunt
+
+#### test coverage for  [time-grunt (v1.4.0)](https://github.com/sindresorhus/time-grunt#readme)  [![npm package](https://img.shields.io/npm/v/npmtest-time-grunt.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-time-grunt) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-time-grunt.svg)](https://travis-ci.org/npmtest/node-npmtest-time-grunt)
+
 #### Display the elapsed execution time of grunt tasks
 
 [![NPM](https://nodei.co/npm/time-grunt.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/time-grunt)
